@@ -1,0 +1,194 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #000000;
+    color: #e5e5e5;
+}
+
+h1 {
+    color: #d4af37;
+    text-align: center;
+}
+
+h2 {
+    color: #d4af37;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    width: 80%;
+    margin: 15px auto;
+}
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    color: #d4af37;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.hero img {
+    height: 500px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.rooms {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.room-card {
+    background: #0d0d0d;
+    border-radius: 10px;
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.room-card img {
+    width: 100%;
+}
+
+.room-card h3 {
+    color: #fff;
+    margin: 10px;
+}
+
+.room-card p {
+    color: #9ca3af;
+    padding: 0 10px 15px;
+}
+
+form {
+    background: #111111;
+    padding: 25px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+input, select {
+    width: 200px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #000;
+    color: #fff;
+}
+
+input:focus, select:focus {
+    border-color: #d4af37;
+}
+
+input[type="submit"] {
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #f5c542;
+}
+
+button {
+    padding: 12px 25px;
+    background: #d4af37;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b8962e;
+}
+.amenities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.amenities div {
+    background: #0d0d0d;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #222;
+}
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rooms {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .amenities {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    input, select {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .amenities {
+        grid-template-columns: 1fr;
+    }
+}
