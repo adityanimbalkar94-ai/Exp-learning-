@@ -17,19 +17,30 @@
 </header>
 
 
+
+<!-- Replace your old navbar with this one -->
 <nav class="navbar">
-    <div class="logo">Grand Plaza</div>
-
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="rooms2.html">Rooms</a></li>
-        <li><a href="booking.html">Book Now</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        
+        <!-- Logo -->
+        <div class="logo">GRAND PLAZA</div>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms2.html">Rooms</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <!-- Book Now Button -->
+        <a href="booking.html" class="btn" style="background: #d4af37; color: #000; padding: 10px 24px; border-radius: 25px; font-weight: bold; text-decoration: none; margin-left: 20px;">Book Now</a>
+    </div>
 </nav>
-
 
 <div id="hotelCarousel" class="carousel slide hero" data-bs-ride="carousel">
 
@@ -109,6 +120,23 @@
         <div>🅿 Parking</div>
     </div>
 </section>
+<section id="location" class="py-5" style="background-color:#0a0a0a ;">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Location</h2>
+            <div class="row">
+                <div class="col-lg-5">
+                    <p class="lead">Located in the heart of Nagpur, offering easy access to business hubs, attractions, and transportation.</p>
+                    <p><strong>Address:</strong> Sitabuldi, Nagpur, Maharashtra 440012</p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.0!2d79.0882!3d21.1458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0f0f0f0f0f0%3A0x1234567890abcdef!2sSitabuldi%2C+Nagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1710000000000" 
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <footer id="contact">
     <h2>Contact Us</h2>
@@ -117,6 +145,23 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+<!--Smooth Scrolling-->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({ behavior: "smooth" });
+    });
+});
+</script>
 </body>
 </html>
