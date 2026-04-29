@@ -71,6 +71,45 @@
 </form>
 
 </center>
+<!--Check if check-out date is after check-in date-->
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    let checkin = document.querySelectorAll("input[type='date']")[0].value;
+    let checkout = document.querySelectorAll("input[type='date']")[1].value;
 
+    if (checkout <= checkin) {
+        alert("Check-out date must be after check-in date!");
+        e.preventDefault(); // stop form submission
+    }
+});
+
+function validateEmail(email) {
+    return email.includes("@") && email.includes(".");
+}
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    let email = document.querySelector("input[type='email']").value;
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email!");
+        e.preventDefault();
+    }
+});
+
+</script>
+<!--Disable Submit Button Until Form is Filled-->
+<script>
+let inputs = document.querySelectorAll("input, select");
+let submitBtn = document.querySelector("input[type='submit']");
+
+submitBtn.disabled = true;
+
+inputs.forEach(input => {
+    input.addEventListener("input", () => {
+        let allFilled = [...inputs].every(i => i.value !== "");
+        submitBtn.disabled = !allFilled;
+    });
+});
+</script>
 </body>
 </html>
